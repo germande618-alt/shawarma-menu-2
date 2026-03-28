@@ -18,7 +18,7 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  height: 320px;
+  height: 420px; /* было 320 */
   overflow: hidden;
 }
 
@@ -26,12 +26,17 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.1); /* приближение как на макете */
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.9)
+  );
 }
 
 .hero-content {
@@ -41,12 +46,14 @@ body {
 }
 
 .hero h1 {
-  font-size: 28px;
+  font-size: 34px; /* было 28 */
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .city {
-  color: orange;
-  font-size: 14px;
+  color: #ff9d00;
+  font-size: 16px;
 }
 
 .buttons {
@@ -57,26 +64,29 @@ body {
 }
 
 .buttons button {
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 14px;
   border: none;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
   color: white;
+  font-size: 14px;
 }
 
 /* PERSON */
 .person {
   position: absolute;
-  right: 15px;
-  bottom: -30px;
+  right: 20px;
+  bottom: -50px; /* было -30 */
   text-align: center;
 }
 
 .person img {
-  width: 80px;
-  height: 80px;
+  width: 90px; /* было 80 */
+  height: 90px;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 4px solid white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .person span {
@@ -87,7 +97,7 @@ body {
 /* MENU */
 .menu {
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 70px; /* было 40 */
 }
 
 .menu h2 {
