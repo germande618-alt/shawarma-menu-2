@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Roll</title>
 
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("images/hero.jpg") center/cover no-repeat;
+    display: flex;
+    padding: 40px;
+}
+
+/* затемнение */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+/* контент */
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+/* логотип */
+.logo {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: orange;
+    font-size: 18px;
+    display: block;
+}
+
+/* кнопки */
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* меню */
+.menu {
+    margin-top: 40px;
+}
+
+.menu h2 {
+    margin-bottom: 15px;
+}
+
+/* карточка */
+.card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* товары */
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* картинка */
+.item-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* цена */
+.price {
+    margin-top: 5px;
+    color: #ccc;
+}
+
+/* кнопки +/- */
+.counter {
+    display: flex;
+    margin-top: 10px;
+}
+
+.counter button {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.minus {
+    background: #c0392b;
+    color: white;
+    border-radius: 10px 0 0 10px;
+}
+
+.plus {
+    background: #f39c12;
+    color: white;
+    border-radius: 0 10px 10px 0;
+}
+
+/* профиль справа */
+.profile {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    text-align: center;
+    z-index: 2;
+}
+
+.profile img {
+    width: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.profile h3 {
+    margin-top: 10px;
+}
+
+/* кнопка заказа */
+.order-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: green;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="hero">
+    <div class="content">
+
+        <div class="logo">
+            Black Roll
+            <span>odessa</span>
+        </div>
+
+        <!-- КНОПКИ -->
+        <div class="btn" onclick="openMap()">📍 Open location</div>
+        <div class="btn" onclick="call()">📞 +31 6 82852044</div>
+        <div class="btn" onclick="whatsapp()">💬 WhatsApp</div>
+
+        <!-- МЕНЮ -->
+        <div class="menu">
+            <h2>🍔 Menu</h2>
+
+            <!-- ШАУРМА -->
+            <div class="card">
+                <img src="images/shawarma.png" class="item-img">
+                <h3>Shawarma XL</h3>
+                <div class="price">€18</div>
+                <div class="counter">
+                    <button class="minus">-</button>
+                    <button>0</button>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+
+            <!-- НАПИТКИ -->
+            <div class="products">
+
+                <div class="card">
+                    <img src="images/pepsi.png" class="item-img">
+                    <h4>Pepsi</h4>
+                    <div class="price">€3</div>
+                </div>
+
+                <div class="card">
+                    <img src="images/cola.png" class="item-img">
+                    <h4>Cola</h4>
+                    <div class="price">€14.5</div>
+                </div>
+
+                <div class="card">
+                    <img src="images/redbull.png" class="item-img">
+                    <h4>Red Bull</h4>
+                    <div class="price">€3</div>
+                </div>
+
+                <div class="card">
+                    <img src="images/ayran.png" class="item-img">
+                    <h4>Ayran</h4>
+                    <div class="price">€3</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ПРОФИЛЬ -->
+    <div class="profile">
+        <img src="images/person.png">
+        <h3>Ruslan</h3>
+        <p>Motivator</p>
+    </div>
+
+</div>
+
+<div class="order-btn">Order</div>
+
+<script>
+function openMap() {
+    window.open("https://maps.app.goo.gl/U9jSwZBhYhGr8AGNA?g_st=it");
+}
+
+function call() {
+    window.location.href = "tel:+31682852044";
+}
+
+function whatsapp() {
+    window.open("https://wa.me/31682852044");
+}
+</script>
+
+</body>
+</html>
