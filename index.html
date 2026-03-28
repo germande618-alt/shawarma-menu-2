@@ -6,23 +6,14 @@
 <title>Black Roll</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#000;
-color:#fff;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#000;color:#fff;}
 
 /* HERO */
 .hero{
 position:relative;
 min-height:100vh;
-background:url("Images/hero.jpg") center/contain no-repeat;
+background:url("Images/hero.jpg") center/80% no-repeat; /* уменьшили фон */
 padding:20px;
 }
 
@@ -30,34 +21,35 @@ padding:20px;
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.35); /* меньше затемнение */
+background:rgba(0,0,0,0.25); /* почти прозрачный */
 }
 
 /* CONTENT */
 .content{
 position:relative;
 z-index:2;
-max-width:380px; /* сжали */
+max-width:320px;
 }
 
 /* LOGO */
 .logo{
-font-size:28px;
+font-size:26px;
 font-weight:700;
+margin-bottom:5px;
 }
 .logo span{
 color:#f39c12;
-font-size:14px;
+font-size:12px;
 }
 
-/* КНОПКИ */
+/* КНОПКИ (меньше) */
 .btn{
-padding:10px;
-margin-top:8px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(8px);
-border-radius:10px;
-font-size:14px;
+padding:8px 10px;
+margin-top:6px;
+background:rgba(255,255,255,0.07);
+backdrop-filter:blur(6px);
+border-radius:8px;
+font-size:13px;
 }
 
 /* MENU */
@@ -65,27 +57,28 @@ font-size:14px;
 margin-top:15px;
 }
 
-/* CARD */
+/* КАРТОЧКИ */
 .card{
-background:rgba(0,0,0,0.5);
-border-radius:15px;
-padding:10px;
+background:#111;
+border-radius:16px;
+padding:12px;
 margin-top:10px;
+text-align:center;
 }
 
-/* ШАУРМА КВАДРАТ */
+/* ШАУРМА */
 .main img{
 width:100%;
-height:150px;
+height:130px;
 object-fit:cover;
 border-radius:12px;
 }
 
-/* GRID */
+/* GRID как на 2 фото */
 .products{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:10px;
+gap:12px;
 margin-top:10px;
 }
 
@@ -95,15 +88,22 @@ height:100px;
 object-fit:contain;
 }
 
+/* ТЕКСТ */
+.price{
+color:#ccc;
+font-size:14px;
+margin-top:5px;
+}
+
 /* PROFILE */
 .profile{
 position:absolute;
 right:10px;
-top:55%;
+top:50%;
 transform:translateY(-50%);
 }
 .profile img{
-width:60px;
+width:55px;
 border-radius:50%;
 border:2px solid #fff;
 }
@@ -111,28 +111,29 @@ border:2px solid #fff;
 /* ORDER */
 .order-btn{
 position:fixed;
-bottom:15px;
-left:15px;
-right:15px;
+bottom:10px;
+left:10px;
+right:10px;
 background:#1e8e3e;
 padding:12px;
 border-radius:10px;
 text-align:center;
+font-size:16px;
 }
 
-/* 📱 MOBILE */
+/* MOBILE */
 @media (max-width:600px){
 
 .hero{
-background-size:cover;
+background-size:90%;
 }
 
-.content{
-max-width:320px;
+.logo{
+font-size:22px;
 }
 
-.main img{
-height:120px;
+.products img{
+height:90px;
 }
 
 }
@@ -159,29 +160,33 @@ Black Roll<br><span>odessa</span>
 <div class="card main">
 <img src="Images/shawarma.png">
 <h3>Shawarma XL</h3>
-<p>€18</p>
+<div class="price">€18</div>
 </div>
 
 <div class="products">
 
 <div class="card">
 <img src="Images/pepsi.png">
-<p>Pepsi €3</p>
+<div>Pepsi</div>
+<div class="price">€3</div>
 </div>
 
 <div class="card">
 <img src="Images/cola.png">
-<p>Cola €14.5</p>
+<div>Cola</div>
+<div class="price">€14.5</div>
 </div>
 
 <div class="card">
 <img src="Images/redbull.png">
-<p>Red Bull €3</p>
+<div>Red Bull</div>
+<div class="price">€3</div>
 </div>
 
 <div class="card">
 <img src="Images/ayran.png">
-<p>Ayran €3</p>
+<div>Ayran</div>
+<div class="price">€3</div>
 </div>
 
 </div>
