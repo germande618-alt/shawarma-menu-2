@@ -6,15 +6,24 @@
 <title>Black Roll</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body{background:#000;color:#fff;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+}
 
 /* HERO */
 .hero{
 position:relative;
 min-height:100vh;
 background:url("Images/hero.jpg") center/cover no-repeat;
-padding:20px;
+padding:40px;
 }
 
 .hero::after{
@@ -24,111 +33,125 @@ inset:0;
 background:rgba(0,0,0,0.6);
 }
 
-/* CONTENT */
-.content{
+/* LAYOUT */
+.wrapper{
 position:relative;
 z-index:2;
-max-width:500px;
+display:flex;
+gap:40px;
+}
+
+/* LEFT */
+.left{
+flex:1;
+max-width:600px;
+}
+
+/* RIGHT */
+.right{
+width:260px;
 }
 
 /* LOGO */
-.logo{font-size:34px;font-weight:700;}
-.logo span{color:#f39c12;font-size:14px;}
+.logo{
+font-size:48px;
+font-weight:bold;
+}
+.logo span{
+color:#f39c12;
+font-size:18px;
+}
 
 /* BUTTONS */
 .btn{
-padding:12px;
-margin-top:10px;
+margin-top:15px;
+padding:15px;
+border-radius:15px;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(10px);
-border-radius:12px;
 }
 
 /* MENU */
-.menu{margin-top:20px;}
-.menu h2{margin-bottom:10px;}
-
-/* CARD */
-.card{
-background:rgba(0,0,0,0.55);
-backdrop-filter:blur(10px);
-border-radius:16px;
-padding:10px;
+.menu{
+margin-top:30px;
 }
 
-/* ШАУРМА (фикс размера) */
-.card.main img{
+.card{
+background:rgba(0,0,0,0.5);
+border-radius:20px;
+padding:15px;
+margin-top:15px;
+}
+
+/* MAIN CARD (ШАУРМА) */
+.main img{
 height:180px;
 object-fit:cover;
+width:100%;
+border-radius:15px;
 }
 
-/* PRODUCTS */
+/* GRID */
 .products{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:10px;
-margin-top:10px;
+gap:15px;
+margin-top:15px;
 }
 
-.item-img{
+.products img{
 width:100%;
-border-radius:10px;
+border-radius:12px;
 }
 
-/* PROFILE (подняли выше) */
+/* PROFILE RIGHT */
 .profile{
-position:absolute;
-right:10px;
-top:45%;
-transform:translateY(-50%);
-z-index:3;
+text-align:center;
 }
 .profile img{
-width:70px;
+width:120px;
 border-radius:50%;
-border:3px solid #fff;
+border:4px solid #fff;
 }
 
 /* SIDE CARD */
 .side-card{
-position:absolute;
-right:10px;
-bottom:20px;
-width:110px;
-background:rgba(0,0,0,0.6);
-border-radius:14px;
-padding:8px;
+margin-top:20px;
+background:rgba(0,0,0,0.5);
+padding:15px;
+border-radius:15px;
 text-align:center;
+}
+.side-card img{
+width:100%;
+border-radius:12px;
 }
 
 /* ORDER */
 .order-btn{
-position:fixed;
-bottom:15px;
-left:15px;
-right:15px;
+margin-top:15px;
 background:#1e8e3e;
-padding:14px;
-text-align:center;
+padding:15px;
 border-radius:12px;
-font-size:16px;
+text-align:center;
 }
 
-/* 📱 MOBILE FIX */
-@media (max-width: 600px){
+/* 📱 MOBILE */
+@media (max-width: 900px){
 
-.logo{font-size:28px;}
+.wrapper{
+flex-direction:column;
+}
 
-.card.main img{
-height:140px;
+.right{
+width:100%;
 }
 
 .profile{
-top:40%;
-}
-
-.side-card{
-width:90px;
+position:absolute;
+right:10px;
+top:50%;
+transform:translateY(-50%);
 }
 
 }
@@ -140,11 +163,13 @@ width:90px;
 
 <div class="hero">
 
-<div class="content">
+<div class="wrapper">
+
+<!-- LEFT -->
+<div class="left">
 
 <div class="logo">
-Black Roll
-<br><span>odessa</span>
+Black Roll<br><span>odessa</span>
 </div>
 
 <div class="btn">📍 Open location</div>
@@ -152,10 +177,9 @@ Black Roll
 <div class="btn">💬 WhatsApp</div>
 
 <div class="menu">
-<h2>🍔 Menu</h2>
 
 <div class="card main">
-<img src="Images/shawarma.png" class="item-img">
+<img src="Images/shawarma.png">
 <h3>Shawarma XL</h3>
 <p>€18</p>
 </div>
@@ -163,44 +187,51 @@ Black Roll
 <div class="products">
 
 <div class="card">
-<img src="Images/pepsi.png" class="item-img">
+<img src="Images/pepsi.png">
 <p>Pepsi €3</p>
 </div>
 
 <div class="card">
-<img src="Images/cola.png" class="item-img">
+<img src="Images/cola.png">
 <p>Cola €14.5</p>
 </div>
 
 <div class="card">
-<img src="Images/redbull.png" class="item-img">
+<img src="Images/redbull.png">
 <p>Red Bull €3</p>
 </div>
 
 <div class="card">
-<img src="Images/ayran.png" class="item-img">
-<p>Ayran €3</p>
-</div>
-
-</div>
-
-</div>
-</div>
-
-<!-- PROFILE -->
-<div class="profile">
-<img src="Images/person.png">
-</div>
-
-<!-- SIDE -->
-<div class="side-card">
 <img src="Images/ayran.png">
 <p>Ayran €3</p>
 </div>
 
 </div>
 
+</div>
+</div>
+
+<!-- RIGHT -->
+<div class="right">
+
+<div class="profile">
+<img src="Images/person.png">
+<h3>Ruslan</h3>
+<p>Motivator</p>
+</div>
+
+<div class="side-card">
+<img src="Images/ayran.png">
+<p>Ayran €3</p>
+</div>
+
 <div class="order-btn">Order</div>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
