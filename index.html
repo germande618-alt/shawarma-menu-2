@@ -30,14 +30,14 @@ padding:20px;
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,0.6);
 }
 
 /* CONTENT */
 .content{
 position:relative;
 z-index:2;
-max-width:600px;
+max-width:500px;
 }
 
 /* LOGO */
@@ -73,13 +73,13 @@ margin-bottom:15px;
 
 /* CARD */
 .card{
-background:rgba(255,255,255,0.06);
+background:rgba(0,0,0,0.55);
 backdrop-filter:blur(10px);
 border-radius:18px;
 padding:12px;
 }
 
-/* PRODUCTS GRID */
+/* PRODUCTS */
 .products{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -87,13 +87,11 @@ gap:12px;
 margin-top:12px;
 }
 
-/* IMAGE */
 .item-img{
 width:100%;
 border-radius:10px;
 }
 
-/* PRICE */
 .price{
 color:#ccc;
 margin-top:4px;
@@ -121,14 +119,13 @@ color:#fff;
 border-radius:0 8px 8px 0;
 }
 
-/* PROFILE */
+/* PROFILE RIGHT */
 .profile{
 position:absolute;
 right:10px;
-top:55%;
-transform:translateY(-50%);
+bottom:120px;
 text-align:center;
-z-index:2;
+z-index:3;
 }
 .profile img{
 width:80px;
@@ -144,17 +141,38 @@ font-size:12px;
 color:#ccc;
 }
 
+/* RIGHT CARD (AYRAN) */
+.side-card{
+position:absolute;
+right:10px;
+bottom:20px;
+width:120px;
+background:rgba(0,0,0,0.6);
+border-radius:16px;
+padding:10px;
+z-index:3;
+text-align:center;
+}
+.side-card img{
+width:100%;
+border-radius:10px;
+}
+.side-card .price{
+font-size:12px;
+}
+
 /* ORDER BUTTON */
 .order-btn{
 position:fixed;
 bottom:20px;
 left:20px;
-right:20px;
+right:150px;
 background:#1e8e3e;
 padding:16px;
 text-align:center;
 border-radius:14px;
 font-size:18px;
+z-index:3;
 }
 </style>
 
@@ -220,10 +238,18 @@ Black Roll
 </div>
 </div>
 
+<!-- PROFILE -->
 <div class="profile">
 <img src="Images/person.png">
 <h3>Ruslan</h3>
 <p>Motivator</p>
+</div>
+
+<!-- SIDE CARD -->
+<div class="side-card">
+<img src="Images/ayran.png">
+<div>Ayran</div>
+<div class="price">€3</div>
 </div>
 
 </div>
