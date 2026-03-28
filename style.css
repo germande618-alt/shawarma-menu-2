@@ -77,16 +77,17 @@ body {
 .person {
   position: absolute;
   right: 20px;
-  bottom: -50px; /* было -30 */
-  text-align: center;
+  bottom: -40px; /* поднимаем */
+  z-index: 10;
+  pointer-events: none; /* нельзя двигать */
 }
 
 .person img {
-  width: 90px; /* было 80 */
-  height: 90px;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
   border: 4px solid white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 .person span {
@@ -97,7 +98,7 @@ body {
 /* MENU */
 .menu {
   padding: 20px;
-  margin-top: 70px; /* было 40 */
+  margin-top: 80px;
 }
 
 .menu h2 {
