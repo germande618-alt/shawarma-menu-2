@@ -6,19 +6,9 @@
 <title>Black Roll</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#000;color:#fff;}
 
-body{
-background:#000;
-color:#fff;
-}
-
-/* HERO */
 .hero{
 position:relative;
 min-height:100vh;
@@ -33,25 +23,15 @@ inset:0;
 background:rgba(0,0,0,0.6);
 }
 
-/* CONTENT */
 .content{
 position:relative;
 z-index:2;
 max-width:500px;
 }
 
-/* LOGO */
-.logo{
-font-size:38px;
-font-weight:700;
-}
-.logo span{
-color:#f39c12;
-font-size:16px;
-display:block;
-}
+.logo{font-size:38px;font-weight:700;}
+.logo span{color:#f39c12;font-size:16px;display:block;}
 
-/* BUTTONS */
 .btn{
 display:flex;
 align-items:center;
@@ -63,15 +43,9 @@ backdrop-filter:blur(10px);
 border-radius:14px;
 }
 
-/* MENU */
-.menu{
-margin-top:25px;
-}
-.menu h2{
-margin-bottom:15px;
-}
+.menu{margin-top:25px;}
+.menu h2{margin-bottom:15px;}
 
-/* CARD */
 .card{
 background:rgba(0,0,0,0.55);
 backdrop-filter:blur(10px);
@@ -79,7 +53,6 @@ border-radius:18px;
 padding:12px;
 }
 
-/* PRODUCTS */
 .products{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -87,17 +60,9 @@ gap:12px;
 margin-top:12px;
 }
 
-.item-img{
-width:100%;
-border-radius:10px;
-}
+.item-img{width:100%;border-radius:10px;}
+.price{color:#ccc;margin-top:4px;}
 
-.price{
-color:#ccc;
-margin-top:4px;
-}
-
-/* COUNTER */
 .counter{
 display:flex;
 margin-top:8px;
@@ -108,18 +73,9 @@ border:none;
 padding:8px;
 font-size:16px;
 }
-.minus{
-background:#c0392b;
-color:#fff;
-border-radius:8px 0 0 8px;
-}
-.plus{
-background:#f39c12;
-color:#fff;
-border-radius:0 8px 8px 0;
-}
+.minus{background:#c0392b;color:#fff;border-radius:8px 0 0 8px;}
+.plus{background:#f39c12;color:#fff;border-radius:0 8px 8px 0;}
 
-/* PROFILE RIGHT */
 .profile{
 position:absolute;
 right:10px;
@@ -132,16 +88,7 @@ width:80px;
 border-radius:50%;
 border:3px solid #fff;
 }
-.profile h3{
-font-size:14px;
-margin-top:6px;
-}
-.profile p{
-font-size:12px;
-color:#ccc;
-}
 
-/* RIGHT CARD (AYRAN) */
 .side-card{
 position:absolute;
 right:10px;
@@ -150,18 +97,9 @@ width:120px;
 background:rgba(0,0,0,0.6);
 border-radius:16px;
 padding:10px;
-z-index:3;
 text-align:center;
 }
-.side-card img{
-width:100%;
-border-radius:10px;
-}
-.side-card .price{
-font-size:12px;
-}
 
-/* ORDER BUTTON */
 .order-btn{
 position:fixed;
 bottom:20px;
@@ -172,7 +110,38 @@ padding:16px;
 text-align:center;
 border-radius:14px;
 font-size:18px;
-z-index:3;
+cursor:pointer;
+}
+
+/* MODAL */
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.8);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.modal-content{
+background:#111;
+padding:20px;
+border-radius:15px;
+width:90%;
+max-width:300px;
+text-align:center;
+}
+
+.modal button{
+margin-top:10px;
+padding:10px;
+width:100%;
+border:none;
+border-radius:10px;
+background:#f39c12;
+color:#fff;
+font-size:16px;
 }
 </style>
 
@@ -200,11 +169,6 @@ Black Roll
 <img src="Images/shawarma.png" class="item-img">
 <h3>Shawarma XL</h3>
 <div class="price">€18</div>
-<div class="counter">
-<button class="minus">-</button>
-<button>0</button>
-<button class="plus">+</button>
-</div>
 </div>
 
 <div class="products">
@@ -238,23 +202,41 @@ Black Roll
 </div>
 </div>
 
-<!-- PROFILE -->
 <div class="profile">
 <img src="Images/person.png">
-<h3>Ruslan</h3>
-<p>Motivator</p>
 </div>
 
-<!-- SIDE CARD -->
 <div class="side-card">
 <img src="Images/ayran.png">
-<div>Ayran</div>
-<div class="price">€3</div>
+<div>Ayran €3</div>
 </div>
 
 </div>
 
-<div class="order-btn">Order</div>
+<div class="order-btn" onclick="openModal()">Order</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<h3>Choose time</h3>
+
+<button onclick="selectTime('Now')">Now</button>
+<button onclick="selectTime('15 min')">15 min</button>
+<button onclick="selectTime('30 min')">30 min</button>
+
+</div>
+</div>
+
+<script>
+function openModal(){
+document.getElementById('modal').style.display='flex';
+}
+
+function selectTime(time){
+alert("Order confirmed: " + time);
+document.getElementById('modal').style.display='none';
+}
+</script>
 
 </body>
 </html>
