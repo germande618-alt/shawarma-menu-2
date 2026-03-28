@@ -78,7 +78,7 @@ body {
 .person {
   position: absolute;
   right: 20px;
-  bottom: -1px; /* поднимаем */
+  bottom: 5px; /* поднимаем */
   z-index: 10;
   pointer-events: none; /* нельзя двигать */
 }
