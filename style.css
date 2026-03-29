@@ -47,9 +47,10 @@ body {
 }
 
 .hero h1 {
-  font-size: 34px; /* было 28 */
+  font-size: 38px; /* чуть больше */
   font-weight: 800;
   letter-spacing: 1px;
+  line-height: 1;
 }
 
 .city {
@@ -78,9 +79,15 @@ body {
 .person {
   position: absolute;
   right: 20px;
-  bottom: 5px; /* поднимаем */
+  bottom: 5px;
   z-index: 10;
-  pointer-events: none; /* нельзя двигать */
+  text-align: center;
+}
+
+.person p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.2;
 }
 
 .person img {
@@ -92,8 +99,9 @@ body {
 }
 
 .person span {
-  color: gray;
-  font-size: 12px;
+  display: block; /* перенос вниз */
+  font-size: 14px; /* одинаковый размер */
+  color: #aaa;
 }
 
 /* MENU */
