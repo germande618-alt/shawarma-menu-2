@@ -189,10 +189,29 @@ body {
 }
 
 .order-form {
-  margin-top: 20px;
-  display: flex;
+  display: none; /* 🔥 скрыто */
+  margin-top: 15px;
   flex-direction: column;
   gap: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.order-form.active {
+  display: flex;
+}
+
+.confirm-order {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: green;
+  color: white;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
 .order-form input {
