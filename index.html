@@ -13,7 +13,6 @@
   <!-- HERO -->
   <div class="hero">
     <img src="Images/hero.jpg" class="hero-bg">
-
     <div class="overlay"></div>
 
     <div class="hero-content">
@@ -40,7 +39,7 @@
 
     <div class="grid">
 
-      <!-- SHAWARMA -->
+      <!-- ШАУРМА -->
       <div class="card" data-name="Shawarma XL">
         <img src="Images/shawarma.png">
         <h3>Shawarma XL</h3>
@@ -181,8 +180,8 @@
 
     </div>
 
-    <!-- 🔥 ФОРМА -->
-    <div class="order-form">
+    <!-- ФОРМА -->
+    <div class="order-form" id="orderForm">
       <input type="text" id="nameInput" placeholder="Your name">
 
       <div class="time-picker">
@@ -190,20 +189,21 @@
         <span>:</span>
         <select id="minutes"></select>
       </div>
+
+      <button class="confirm-order" onclick="sendOrder()">Confirm Order</button>
     </div>
 
-    <button class="order" onclick="makeOrder()">Order</button>
+    <button class="order" onclick="toggleOrder()">Order</button>
 
   </div>
 
 </div>
 
-<!-- JS -->
 <script>
 
+// КОРЗИНА
 let cart = {};
 
-// + -
 document.querySelectorAll('.card').forEach(card => {
   const minus = card.querySelector('.minus');
   const plus = card.querySelector('.plus');
@@ -225,22 +225,27 @@ document.querySelectorAll('.card').forEach(card => {
   };
 });
 
-// генерация времени
+// ВРЕМЯ
 const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 
 for (let i = 0; i < 24; i++) {
   let h = i.toString().padStart(2, '0');
-  hours.innerHTML += `<option value="${h}">${h}</option>`;
+  hours.innerHTML += `<option>${h}</option>`;
 }
 
 for (let i = 0; i < 60; i += 5) {
   let m = i.toString().padStart(2, '0');
-  minutes.innerHTML += `<option value="${m}">${m}</option>`;
+  minutes.innerHTML += `<option>${m}</option>`;
 }
 
-// ORDER
-function makeOrder() {
+// ПОКАЗ ФОРМЫ
+function toggleOrder() {
+  document.getElementById("orderForm").classList.toggle("active");
+}
+
+// ОТПРАВКА
+function sendOrder() {
 
   let name = document.getElementById("nameInput").value;
   let hour = document.getElementById("hours").value;
@@ -267,14 +272,12 @@ function makeOrder() {
   message += "\nName: " + name;
   message += "\nTime: " + hour + ":" + minute;
 
-  let url = "https://wa.me/31682852044?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
+  window.open("https://wa.me/31682852044?text=" + encodeURIComponent(message));
 }
 
-// кнопки
+// КНОПКИ
 function openMap() {
-  window.open("https://maps.app.goo.gl/zLtu4w1jdmJBHS1a6", "_blank");
+  window.open("https://maps.app.goo.gl/zLtu4w1jdmJBHS1a6");
 }
 
 function callPhone() {
@@ -282,7 +285,7 @@ function callPhone() {
 }
 
 function openWhatsApp() {
-  window.open("https://wa.me/31682852044", "_blank");
+  window.open("https://wa.me/31682852044");
 }
 
 </script>
