@@ -40,7 +40,7 @@
 
     <div class="grid">
 
-      <!-- ШАУРМА -->
+      <!-- SHAWARMA -->
       <div class="card" data-name="Shawarma XL">
         <img src="Images/shawarma.png">
         <h3>Shawarma XL</h3>
@@ -181,6 +181,17 @@
 
     </div>
 
+    <!-- 🔥 ФОРМА -->
+    <div class="order-form">
+      <input type="text" id="nameInput" placeholder="Your name">
+
+      <div class="time-picker">
+        <select id="hours"></select>
+        <span>:</span>
+        <select id="minutes"></select>
+      </div>
+    </div>
+
     <button class="order" onclick="makeOrder()">Order</button>
 
   </div>
@@ -192,7 +203,7 @@
 
 let cart = {};
 
-// кнопки + -
+// + -
 document.querySelectorAll('.card').forEach(card => {
   const minus = card.querySelector('.minus');
   const plus = card.querySelector('.plus');
@@ -214,14 +225,31 @@ document.querySelectorAll('.card').forEach(card => {
   };
 });
 
+// генерация времени
+const hours = document.getElementById("hours");
+const minutes = document.getElementById("minutes");
+
+for (let i = 0; i < 24; i++) {
+  let h = i.toString().padStart(2, '0');
+  hours.innerHTML += `<option value="${h}">${h}</option>`;
+}
+
+for (let i = 0; i < 60; i += 5) {
+  let m = i.toString().padStart(2, '0');
+  minutes.innerHTML += `<option value="${m}">${m}</option>`;
+}
+
 // ORDER
 function makeOrder() {
 
-  let userName = prompt("Your name:");
-  if (!userName) return;
+  let name = document.getElementById("nameInput").value;
+  let hour = document.getElementById("hours").value;
+  let minute = document.getElementById("minutes").value;
 
-  let time = prompt("Pickup time:");
-  if (!time) return;
+  if (!name) {
+    alert("Enter your name");
+    return;
+  }
 
   let message = "Order:\n\n";
 
@@ -236,15 +264,15 @@ function makeOrder() {
     return;
   }
 
-  message += "\nName: " + userName;
-  message += "\nTime: " + time;
+  message += "\nName: " + name;
+  message += "\nTime: " + hour + ":" + minute;
 
   let url = "https://wa.me/31682852044?text=" + encodeURIComponent(message);
 
   window.open(url, "_blank");
 }
 
-// кнопки сверху
+// кнопки
 function openMap() {
   window.open("https://maps.app.goo.gl/zLtu4w1jdmJBHS1a6", "_blank");
 }
