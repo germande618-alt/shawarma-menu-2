@@ -21,126 +21,243 @@
       <span class="city">odessa</span>
 
       <div class="buttons">
-        <button>📍 Open location</button>
-        <button>📞 +31 6 82852044</button>
-        <button>💬 WhatsApp</button>
+        <button onclick="openMap()">📍 Open location</button>
+        <button onclick="callPhone()">📞 +31 6 82852044</button>
+        <button onclick="openWhatsApp()">💬 WhatsApp</button>
       </div>
     </div>
 
     <div class="person">
       <img src="Images/person.png">
-      <p>Ruslan<br><span>motivator</span></p>
+      <p>Ruslan<span>motivator</span></p>
     </div>
-
   </div>
 
   <!-- MENU -->
   <div class="menu">
 
-  <h2>🍽 Menu</h2>
+    <h2>🍽 Menu</h2>
 
-  <!-- ОСНОВНЫЕ ШАУРМЫ -->
-  <div class="grid">
+    <div class="grid">
 
-    <div class="card">
-      <img src="Images/shawarma.png">
-      <h3>Shawarma XL</h3>
-      <p>€18</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+      <!-- ШАУРМА -->
+      <div class="card" data-name="Shawarma XL">
+        <img src="Images/shawarma.png">
+        <h3>Shawarma XL</h3>
+        <p>€18</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Standard">
+        <img src="Images/shawarma.png">
+        <h3>Standard</h3>
+        <p>€14.5</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Mini">
+        <img src="Images/shawarma.png">
+        <h3>Mini</h3>
+        <p>€12</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Hawaii">
+        <img src="Images/shawarma.png">
+        <h3>Hawaii</h3>
+        <p>€16</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Greek">
+        <img src="Images/shawarma.png">
+        <h3>Greek</h3>
+        <p>€16</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Arabic">
+        <img src="Images/shawarma.png">
+        <h3>Arabic</h3>
+        <p>€16</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Suluguni with meat">
+        <img src="Images/shawarma.png">
+        <h3>Suluguni with meat</h3>
+        <p>€16</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
     </div>
 
-    <div class="card">
-      <img src="Images/shawarma.png">
-      <h3>Standard</h3>
-      <p>€14.5</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+    <h2 style="margin-top:20px;">🥤 Drinks</h2>
+
+    <div class="grid">
+
+      <div class="card" data-name="Pepsi">
+        <img src="Images/pepsi.png">
+        <h3>Pepsi</h3>
+        <p>€3</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Cola">
+        <img src="Images/cola.png">
+        <h3>Cola</h3>
+        <p>€3</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Red Bull">
+        <img src="Images/redbull.png">
+        <h3>Red Bull</h3>
+        <p>€3</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Ayran">
+        <img src="Images/ayran.png">
+        <h3>Ayran</h3>
+        <p>€3</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
+      <div class="card" data-name="Fanta">
+        <img src="Images/fanta.png">
+        <h3>Fanta</h3>
+        <p>€3</p>
+        <div class="counter">
+          <button class="minus">-</button>
+          <span>0</span>
+          <button class="plus">+</button>
+        </div>
+      </div>
+
     </div>
 
-    <div class="card">
-      <img src="Images/shawarma.png">
-      <h3>Mini</h3>
-      <p>€12</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-    <div class="card">
-      <img src="Images/shawarma.png">
-      <h3>Hawaii</h3>
-      <p>€16</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-    <div class="card">
-      <img src="Images/shawarma.png">
-      <h3>Greek</h3>
-      <p>€16</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-    <div class="card">
-      <img src="Images/shawarma.png">
-      <h3>Arabic</h3>
-      <p>€16</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-    <div class="card">
-      <img src="Images/shawarma.png">
-      <h3>Suluguni with meat</h3>
-      <p>€16</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
+    <button class="order" onclick="makeOrder()">Order</button>
 
   </div>
 
-  <!-- НАПИТКИ -->
-  <h2 style="margin-top:20px;">🥤 Drinks</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="Images/pepsi.png">
-      <h3>Pepsi</h3>
-      <p>€3</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-    <div class="card">
-      <img src="Images/cola.png">
-      <h3>Cola</h3>
-      <p>€3</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-    <div class="card">
-      <img src="Images/redbull.png">
-      <h3>Red Bull</h3>
-      <p>€3</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-    <div class="card">
-      <img src="Images/ayran.png">
-      <h3>Ayran</h3>
-      <p>€3</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-    <!-- 🔥 НОВОЕ -->
-    <div class="card">
-      <img src="Images/fanta.png">
-      <h3>Fanta</h3>
-      <p>€3</p>
-      <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-    </div>
-
-  </div>
-
-  <button class="order">Order</button>
-
 </div>
 
-</div>
+<!-- JS -->
+<script>
+
+let cart = {};
+
+// кнопки + -
+document.querySelectorAll('.card').forEach(card => {
+  const minus = card.querySelector('.minus');
+  const plus = card.querySelector('.plus');
+  const count = card.querySelector('span');
+  const name = card.dataset.name;
+
+  cart[name] = 0;
+
+  plus.onclick = () => {
+    cart[name]++;
+    count.innerText = cart[name];
+  };
+
+  minus.onclick = () => {
+    if (cart[name] > 0) {
+      cart[name]--;
+      count.innerText = cart[name];
+    }
+  };
+});
+
+// ORDER
+function makeOrder() {
+
+  let userName = prompt("Your name:");
+  if (!userName) return;
+
+  let time = prompt("Pickup time:");
+  if (!time) return;
+
+  let message = "Order:\n\n";
+
+  for (let item in cart) {
+    if (cart[item] > 0) {
+      message += item + " x" + cart[item] + "\n";
+    }
+  }
+
+  if (message === "Order:\n\n") {
+    alert("Cart is empty");
+    return;
+  }
+
+  message += "\nName: " + userName;
+  message += "\nTime: " + time;
+
+  let url = "https://wa.me/31682852044?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+// кнопки сверху
+function openMap() {
+  window.open("https://maps.app.goo.gl/u4KELootzSrwkxp67", "_blank");
+}
+
+function callPhone() {
+  window.location.href = "tel:+31682852044";
+}
+
+function openWhatsApp() {
+  window.open("https://wa.me/31682852044", "_blank");
+}
+
+</script>
 
 </body>
 </html>
